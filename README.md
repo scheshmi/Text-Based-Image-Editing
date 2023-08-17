@@ -20,6 +20,15 @@ Run `download_files.py` to download pre-trained models
 ```python 
 python download_files.py
 ```
+## Run & Usage
+Run `main.py` by the following script
 
+```python 
+python main.py --img_path="input image" --selected_object="your selected object" --prompt="your prompt" --output_path="output path"
+```
+## Example
+
+#### Car
+![]
 
 
