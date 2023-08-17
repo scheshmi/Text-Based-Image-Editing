@@ -1,0 +1,6 @@
+wget
+segment-anything
+scipy
+transformers
+diffusers
+accelerate
