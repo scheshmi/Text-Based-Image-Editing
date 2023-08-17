@@ -35,4 +35,9 @@ python main.py --img_path="input image" --selected_object="your selected object"
 ![flowers.png](images/flowers.png)  
 
 
+## More Details
+[Grounding DINO](https://github.com/IDEA-Research/GroundingDINO)
 
+[Segment Anything Model](https://github.com/facebookresearch/segment-anything)
+
+[Stable Diffusion](https://github.com/huggingface/diffusers)
