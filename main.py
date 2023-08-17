@@ -8,7 +8,7 @@ from segment_anything import SamPredictor, sam_model_registry
 from diffusers import StableDiffusionInpaintPipeline
 from groundingdino.util.inference import load_model, load_image, predict, annotate
 from GroundingDINO.groundingdino.util import box_ops
-
+import argparse
 
 device = "cuda"
 
@@ -82,17 +82,19 @@ def edit_image(path, item, prompt, box_threshold, text_threshold):
 
 def main():
 
-    img_path = "./car_img.jpg"
+    parser = argparse.ArgumentParser(description="Text-Based Image Editor")
+    parser.add_argument("--img_path", type=str, help="Path to the input image")
+    parser.add_argument("--selected_object", type=str, help="Object to be recognized in the image")
+    parser.add_argument("--prompt", type=str, help="Text prompt for image editing")
+    parser.add_argument("--box_threshold", type=float, default=0.3, help="Threshold for bounding box predictions")
+    parser.add_argument("--text_threshold", type=float, default=0.25, help="Threshold for text predictions")
+    parser.add_argument("--out_path", type=str, help="Path to save output")
+    args = parser.parse_args()
 
-    Selected_Object = "black taxi"
-    BOX_THRESHOLD = 0.3
-    TEXT_THRESHOLD = 0.25
 
-    Prompt = "red car"
+    edited_image = edit_image(args.img_path,args.selected_object,args.prompt,args.box_threshold,args.text_threshold)
 
-    edited_image = edit_image(img_path,Selected_Object,Prompt,BOX_THRESHOLD,TEXT_THRESHOLD)
-
-    save_image(edited_image,"edited_car.jpg")
+    save_image(edited_image,args.out_path)
 
 if __name__ == "__main__":
     main()
