@@ -84,11 +84,11 @@ def main():
 
     img_path = "./car_img.jpg"
 
-    Selected_Object = "fire hydrant"
+    Selected_Object = "black taxi"
     BOX_THRESHOLD = 0.3
     TEXT_THRESHOLD = 0.25
 
-    Prompt = "Photo Booth"
+    Prompt = "red car"
 
     edited_image = edit_image(img_path,Selected_Object,Prompt,BOX_THRESHOLD,TEXT_THRESHOLD)
 
