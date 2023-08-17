@@ -28,7 +28,11 @@ python main.py --img_path="input image" --selected_object="your selected object"
 ```
 ## Example
 
-#### Car
-![]
+### Example 1
+![cars.png](images/cars.png)  
+
+### Example 2
+![flowers.png](images/flowers.png)  
+
 
 
